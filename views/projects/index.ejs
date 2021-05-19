@@ -1,8 +1,15 @@
 <h1>Accueil des projets</h1>
 
-<div>
+<div class="projects">
+
   <% projects.forEach(project => { %>
-    <p> <%= project.name %> </p>
-    <p> <%= project.description %> </p>
+
+    <div class="project">
+      <a href="/projects/update/<%=project._id%>">modifier</a>
+      <p> <%= project.name %> </p>
+      <p> <%= project.description %> </p>
+    </div>
+
   <% }); %>
+
 </div>
