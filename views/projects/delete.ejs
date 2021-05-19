@@ -1,0 +1,12 @@
+<h1>Suppression</h1>
+
+<p>Êtes vous sûr de vouloir supprimer ce projet ?</p>
+
+<form action="/projects/delete" method="POST">
+  <input type="hidden" value="<%= _id %>">
+
+  <a href="/projects"> <button> Nope ! </button> </a>
+
+  <a href="/projects"> <button> Yes! </button> </a>
+
+</form>

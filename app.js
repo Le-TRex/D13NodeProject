@@ -16,6 +16,9 @@ app.use(expressLayouts);
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: true}));
 
+/**
+ * GET
+ */
 app.get("/", (request, response) => {
     response.redirect("projects");
 });
@@ -55,3 +58,12 @@ app.post("/projects/update", (request, response) => {
     .then(() => response.redirect("/projects"))
     .catch(error => console.log(error));
 })
+
+/**
+ * DELETE
+ */
+
+app.get("/projects/delete/:id", (request, response) => {
+  const id = request.params.id;
+  response.render("projects/delete", { _id: id }); //pas de / devant les chemins lors des renders
+});
