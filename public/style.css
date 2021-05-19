@@ -54,7 +54,7 @@ body {
   justify-content: space-between;
 }
 
-button {
+button, .button {
   background-color:darkmagenta;
   border-radius: 50px;
   border:1px solid #580058;
