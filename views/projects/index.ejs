@@ -1,15 +1,17 @@
-<h1>Accueil des projets</h1>
+<h1>Projets</h1>
 
 <div class="projects">
 
   <% projects.forEach(project => { %>
 
-    <div class="project">
-      <a href="/projects/update/<%=project._id%>">modifier</a>
+    <div class="project">      
       <p> <%= project.name %> </p>
       <p> <%= project.description %> </p>
+      <div class="buttons">
+        <a href="/projects/update/<%=project._id%>"><button>Modifier</button></a>
+        <a href=""><button>Supprimer</button></a>
+      </div>
     </div>
-
   <% }); %>
 
 </div>

@@ -2,7 +2,14 @@ h1 {
   color: darkmagenta;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .navbar {
+  width: 100%;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -30,17 +37,46 @@ h1 {
 .projects {
   display: flex;
   justify-content: space-between;
-  width: 1000px;
+  width: 100%;
+  flex-wrap: wrap;
   /* background-color: lightpink; */
 }
 
 .project {
   width: 300px;
   border: 1px solid darkmagenta;
+  margin: 10px;
+  padding: 10px;
 }
 
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  background-color:darkmagenta;
+  border-radius: 50px;
+  border:1px solid #580058;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  padding:10px 20px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #8b008b;
+}
+button:hover {
+  background-color:#111;
+}
+
+
 footer {
-  width: 1000px;
+  height:45px;
+  width: 100%;
   color: darkmagenta;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
