@@ -22,7 +22,7 @@ app.get("/", (request, response) => {
 
 app.get("/projects", (request, response) => {
   Project.find()
-    .then(result => response.render("projects", {projects: result}))
+    .then(projects => response.render("projects", {projects: projects}))
     .catch(error => console.log(error));
 });
 
