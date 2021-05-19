@@ -3,10 +3,7 @@
 <p>Êtes vous sûr de vouloir supprimer ce projet ?</p>
 
 <form action="/projects/delete" method="POST">
-  <input type="hidden" value="<%= _id %>">
-
+  <input type="hidden" name="_id" value="<%=_id%>">
   <a href="/projects"> <button> Nope ! </button> </a>
-
-  <a href="/projects"> <button> Yes! </button> </a>
-
+  <button type="submit">Yes ! Supprimer !</button>
 </form>

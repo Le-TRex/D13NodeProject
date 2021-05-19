@@ -66,4 +66,10 @@ app.post("/projects/update", (request, response) => {
 app.get("/projects/delete/:id", (request, response) => {
   const id = request.params.id;
   response.render("projects/delete", { _id: id }); //pas de / devant les chemins lors des renders
-});
+})
+
+app.post("/projects/delete", (request, response) => {
+  Project.findByIdAndDelete(request.body._id)
+    .then(() => response.redirect("/projects"))
+    .catch(error => console.log(error));
+})
