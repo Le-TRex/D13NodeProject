@@ -27,6 +27,20 @@ h1 {
   background-color: #111;
 }
 
+.projects {
+  display: flex;
+  justify-content: space-between;
+  width: 1000px;
+  /* background-color: lightpink; */
+}
+
+.project {
+  width: 300px;
+  border: 1px solid darkmagenta;
+}
+
 footer {
+  width: 1000px;
   color: darkmagenta;
+  text-align: center;
 }
