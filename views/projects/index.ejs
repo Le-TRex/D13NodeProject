@@ -1,1 +1,8 @@
 <h1>Accueil des projets</h1>
+
+<div>
+  <% projects.forEach(project => { %>
+    <p> <%= project.name %> </p>
+    <p> <%= project.description %> </p>
+  <% }); %>
+</div>

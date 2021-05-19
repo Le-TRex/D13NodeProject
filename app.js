@@ -21,9 +21,9 @@ app.get("/", (request, response) => {
 });
 
 app.get("/projects", (request, response) => {
-  response.render("projects");
   Project.find()
-    .then(result => console.log(result));
+    .then(result => response.render("projects", {projects: result}))
+    .catch(error => console.log(error));
 });
 
 app.get("/projects/create", (request, response) => {
