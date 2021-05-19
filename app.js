@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const expressLayouts = require("express-ejs-layouts");
 const { urlencoded } = require("express");
+const Project = require("./models/project");
 
 const app = express();
 
@@ -20,7 +21,9 @@ app.get("/", (request, response) => {
 });
 
 app.get("/projects", (request, response) => {
-    response.render("projects");
+  response.render("projects");
+  Project.find()
+    .then(result => console.log(result));
 });
 
 app.get("/projects/create", (request, response) => {
@@ -28,6 +31,7 @@ app.get("/projects/create", (request, response) => {
 })
 
 app.post("/projects/create", (request, response) => {
-  console.log(request.body);
-  response.redirect("/projects");
+  Project.create(request.body)
+    .then(() => response.redirect("/projects"))
+    .then(error => console.log(error));
 })
