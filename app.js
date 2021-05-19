@@ -29,4 +29,5 @@ app.get("/projects/create", (request, response) => {
 
 app.post("/projects/create", (request, response) => {
   console.log(request.body);
+  response.redirect("/projects");
 })
