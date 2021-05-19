@@ -26,16 +26,32 @@ app.get("/projects", (request, response) => {
     .catch(error => console.log(error));
 });
 
+/**
+ * CREATE
+ */
 app.get("/projects/create", (request, response) => {
     response.render("projects/create");
-})
-
-app.get("/projects/update/:id", (request, response) => {
-  response.render("projects/update");
 })
 
 app.post("/projects/create", (request, response) => {
   Project.create(request.body)
     .then(() => response.redirect("/projects"))
     .then(error => console.log(error));
+})
+
+/**
+ * UPDATE
+ */
+app.get("/projects/update/:id", (request, response) => {
+  const id = request.params.id;
+  Project.findById(id)
+    .then(project => response.render("projects/update", { project: project }))
+    .catch(error => console.log(error));
+})
+
+app.post("/projects/update", (request, response) => {
+  const project = request.body;
+  Project.findByIdAndUpdate(project._id, { name: project.name, description: project.description })
+    .then(() => response.redirect("/projects"))
+    .catch(error => console.log(error));
 })
