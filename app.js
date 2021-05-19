@@ -30,6 +30,10 @@ app.get("/projects/create", (request, response) => {
     response.render("projects/create");
 })
 
+app.get("/projects/update/:id", (request, response) => {
+  response.render("projects/update");
+})
+
 app.post("/projects/create", (request, response) => {
   Project.create(request.body)
     .then(() => response.redirect("/projects"))
