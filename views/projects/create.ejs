@@ -1,17 +1,19 @@
 <h1>Créer un projet</h1>
 <form action="/projects/create" method="POST" class="formCard">
-    <div>
-        <div>
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name">
-        </div>
-    </div>
-    <div>
-        <div>
-            <label for="description">Description</label>
-            <textarea type="text" rows="3" id="description" name="description"></textarea>
-        </div>
-    </div>
-    <a href="/projects" class="button">Back</a>
-    <button type="submit">Créer</button>
+	<div>
+		<div>
+			<label for="name">Name</label>
+			<input type="text" id="name" name="name">
+		</div>
+	</div>
+	<div>
+		<div class="textarea">
+			<label for="description">Description</label>
+			<textarea type="text" rows="3" id="description" name="description"></textarea>
+		</div>
+	</div>
+	<div class="buttons">
+		<a href="/projects" class="button">Back</a>
+		<button type="submit">Créer</button>
+	</div>
 </form>

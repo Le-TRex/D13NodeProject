@@ -6,7 +6,7 @@
       <input type="text" id="title" name="title">
     </div>
 
-    <div>
+    <div class="textarea">
       <label for="reproSteps">Étapes de reproduction du bug</label>
       <textarea type="text" rows="3" id="reproSteps" name="reproSteps"></textarea>
     </div>
@@ -18,5 +18,8 @@
 
     <input type="hidden" value="<%=projectId%>" name="projectId">
   </div>
-  <button type="submit">Créer</button>
+  <div class="buttons">
+    <a href="/projects" class="button">Back</a>
+    <button type="submit">Créer</button>
+  </div>
 </form>

@@ -49,11 +49,22 @@ body {
   width: 600px;
 }
 
+.formCard div {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .card, .formCard {
   border: 1px solid darkmagenta;
   margin: 10px;
   padding: 10px;
 }
+
+.textarea {
+  display: flex;
+  flex-direction: column;
+}
+
 .buttons {
   display: flex;
   justify-content: space-between;

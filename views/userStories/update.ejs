@@ -3,19 +3,23 @@
   <div>
     <label for="title">Name</label>
     <input type="text" id="title" name="title" value="<%=userStory.title%>">
-
+  </div>
+  <div class="textarea">
     <label for="description">Description</label>
     <textarea type="text" rows="3" id="description" name="description"><%=userStory.description%></textarea>
-
+  </div>
+  <div class="textarea">
     <label for="acceptanceCriteria">Critères d'acceptation</label>
     <textarea name="acceptanceCriteria" id="acceptanceCriteria" cols="30" rows="10"><%=userStory.acceptanceCriteria%></textarea>
-
+  </div>
+  <div>
     <label for="priority">Priorité</label>
     <input type="number" name="priority" for="priority" min="1" max="5" value="<%=userStory.priority%>">
-
-    <input type="hidden" name="_id", for="_id" value="<%=userStory._id%>">
-    <input type="hidden" name="projectId", for="projectId" value="<%=userStory.projectId%>">
   </div>
-
-  <button type="submit">Modifier</button>
+  <input type="hidden" name="_id", for="_id" value="<%=userStory._id%>">
+  <input type="hidden" name="projectId", for="projectId" value="<%=userStory.projectId%>">
+  <div class="buttons">
+    <a href="/projects" class ="button"> Back </a>
+    <button type="submit">Modifier</button>
+  </div>
 </form>

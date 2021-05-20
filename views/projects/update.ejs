@@ -3,12 +3,18 @@
 <form action="/projects/update" method="POST" class="formCard">
 	<input type="hidden" name="_id" value="<%=project._id%>"/>
 	<div>
-		<label for="name">Nom du projet</label>
-		<input type="text" id="name" name="name" value="<%= project.name %>">
+		<div>
+			<label for="name">Nom du projet</label>
+			<input type="text" id="name" name="name" value="<%= project.name %>">
+		</div>
 
-		<label for="description">Description</label>
-		<textarea type="text" rows="3" id="description" name="description"><%= project.description %></textarea>
+		<div class="textarea">
+			<label for="description">Description</label>
+			<textarea type="text" rows="3" id="description" name="description"><%= project.description %></textarea>
+		</div>
 	</div>
-	<a href="/projects" class="button">Back</a>
-	<button type="submit">Modifier</button>
+	<div class="buttons">
+		<a href="/projects" class="button">Back</a>
+		<button type="submit">Modifier</button>
+	</div>
 </form>

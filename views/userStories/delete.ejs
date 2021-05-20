@@ -4,6 +4,8 @@
 <form action="/userStories/delete" method="POST" class="formCard">
   <p>Êtes vous sûr de vouloir supprimer cette US ?</p>
   <input type="hidden" name="_id" value="<%=_id%>">
-  <button>Yes ! Supprimer !</button>
-  <a href="/projects" class="button">Nop !</a>
+  <div class="buttons">
+    <button>Yes ! Supprimer !</button>
+    <a href="/projects" class="button">Nop !</a>
+  </div>
 </form>

@@ -6,8 +6,10 @@
 
     <div class="card">
       <h3><%= project.name %></h3>
-      <a href="userStories/<%=project._id%>" class="button">User Stories</a>
-      <a href="bugs/<%=project._id%>" class="button">Bugs</a>
+      <div class="buttons">
+        <a href="userStories/<%=project._id%>" class="button">User Stories</a>
+        <a href="bugs/<%=project._id%>" class="button">Bugs</a>
+      </div>
       <p> <%= project.description %> </p>
       <div class="buttons">
         <a href="/projects/update/<%=project._id%>"><button>Modifier</button></a>

@@ -6,12 +6,12 @@
       <input type="text" id="title" name="title">
     </div>
 
-    <div>
+    <div class="textarea">
       <label for="description">Description</label>
       <textarea type="text" rows="3" id="description" name="description"></textarea>
     </div>
 
-    <div>
+    <div class="textarea">
       <label for="acceptanceCriteria">Critères d'acceptation</label>
       <textarea name="acceptanceCriteria" id="acceptanceCriteria" cols="30" rows="10"></textarea>
     </div>
@@ -23,6 +23,8 @@
 
     <input type="hidden" value="<%=projectId%>" name="projectId">
   </div>
-  <a href="/userStories" class="button"> Back </a>
-  <button type="submit">Créer</button>
+  <div class="buttons">
+    <a href="/projects" class="button">Back</a>
+    <button type="submit">Créer</button>
+  </div>
 </form>

@@ -6,7 +6,7 @@
       <input type="text" id="title" name="title" value="<%=bug.title%>">
     </div>
 
-    <div>
+    <div class="textarea">
       <label for="reproSteps">Description</label>
       <textarea type="text" rows="3" id="reproSteps" name="reproSteps"><%=bug.reproSteps%></textarea>
     </div>
@@ -20,5 +20,8 @@
     <input type="hidden" name="projectId", for="projectId" value="<%=bug.projectId%>">
   </div>
 
-  <button type="submit">Modifier</button>
+	<div class="buttons">
+		<a href="/projects" class="button">Back</a>
+		<button type="submit">Modifier</button>
+	</div>
 </form>
