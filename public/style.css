@@ -65,7 +65,7 @@ button, .button {
   text-decoration:none;
   text-shadow:0px 1px 0px #8b008b;
 }
-button:hover {
+button:hover, .button:hover {
   background-color:#111;
 }
 
