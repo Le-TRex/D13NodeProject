@@ -1,0 +1,26 @@
+<h1>Créer une US</h1>
+<form action="/userStories/create" method="POST">
+    <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name">
+    </div>
+    <div>
+        <label for="description">Description</label>
+        <textarea type="text" rows="3" id="description" name="description"></textarea>
+    </div>
+    <div>
+      <label for="acceptanceCriteria">Critères d'acceptation</label>
+      <textarea name="acceptanceCriteria" id="acceptanceCriteria" cols="30" rows="10"></textarea>
+    </div>
+    <div>
+      <label for="priority">Priorité</label>
+      <input type="number" name="priority" for="priority" min="1" max="5">
+    </div>
+    <div>
+      <!-- <label for="projectId">ID du projet à lier</label>
+      <input readonly=true type="text" name="projectId", for="projectId" value=""> -->
+      <input type="hidden" value="<%=projectId%>" name="projectId">
+    </div>
+    <a href="/userStories"> <button> Back </button> </a>
+    <button type="submit">Créer</button>
+</form>

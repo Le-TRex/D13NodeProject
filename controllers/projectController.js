@@ -1,7 +1,7 @@
 const Project = require("../models/project");
 
 /**
- * GET
+ * READ
  */
 const all = (request, response) => {
   Project.find()
@@ -10,7 +10,7 @@ const all = (request, response) => {
 }
 
 /**
- * POST
+ * CREATE
  */
 const createGet = (request, response) => {
   response.render("projects/create");

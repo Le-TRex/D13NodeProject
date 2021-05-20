@@ -2,7 +2,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const expressLayouts = require("express-ejs-layouts");
 const { urlencoded } = require("express");
-const projectRoutes = require("./routes/projectRoutes")
+
+const projectRoutes = require("./routes/projectRoutes");
+const userStoryRoutes = require("./routes/userStoryRoutes");
 
 const app = express();
 
@@ -21,3 +23,4 @@ app.get("/", (request, response) => {
 });
 
 app.use("/projects", projectRoutes); //"/projects" => alias pour le début de chaque route
+app.use("/userStories", userStoryRoutes);
