@@ -1,8 +1,22 @@
 <h1>User Stories</h1>
 
-<div class="userStories">
-<p>Ici une ou des US</p>
-
 <a href="/userStories/create/<%= projectId %>" class="button">Créer US</a>
+
+<div class="mainContainer">
+  <div>
+    <% userStories.forEach(userStory => { %>
+
+      <div class="card">
+        <h3><a href="userStories/<%=userStory._id%>"><%= userStory.name %></a></h3>
+        <p> <%= userStory.description %> </p>
+        <p> <%= userStory.acceptanceCriteria%> </p>
+        <p> <%= userStory.priority%> </p>
+        <div class="buttons">
+          <a href="/userStories/update/<%=userStory._id%>"><button>Modifier</button></a>
+          <a href="/userStpries/delete/<%=userStory._id%>"><button>Supprimer</button></a>
+        </div>
+      </div>
+    <% }); %>
+  </div>
 
 </div>

@@ -3,9 +3,11 @@ const UserStory = require("../models/userStory");
 /** 
  * READ
  */
-const allByProject = (request, repsonse) => {
+const allByProject = (request, response) => {
   const projectId = request.params.projectId;
-  repsonse.render("userStories", { projectId });
+  UserStory.find({projectId})
+    .then(userStories => response.render("userStories", { projectId, userStories }))
+    .catch(error => console.log(error));
 }
 
 /**
@@ -18,7 +20,7 @@ const createGet = (request, response) => {
 
 const createPost = (request, response) => {
   UserStory.create(request.body)
-    .then(() => response.redirect("/userStories"))
+    .then(() => response.redirect("/userStories/" + request.body.projectId))
     .then(error => console.log(error));
 };
 
