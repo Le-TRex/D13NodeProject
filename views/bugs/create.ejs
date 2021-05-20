@@ -1,0 +1,22 @@
+<h1>Créer un rapport de bug</h1>
+<form action="/bugs/create" method="POST" class="formCard">
+  <div>
+    <div>
+      <label for="title">Name</label>
+      <input type="text" id="title" name="title">
+    </div>
+
+    <div>
+      <label for="reproSteps">Étapes de reproduction du bug</label>
+      <textarea type="text" rows="3" id="reproSteps" name="reproSteps"></textarea>
+    </div>
+
+    <div>
+      <label for="priority">Priorité</label>
+      <input type="number" name="priority" for="priority" min="1" max="4">
+    </div>
+
+    <input type="hidden" value="<%=projectId%>" name="projectId">
+  </div>
+  <button type="submit">Créer</button>
+</form>

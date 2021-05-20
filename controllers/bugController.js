@@ -1,26 +1,26 @@
-const UserStory = require("../models/userStory");
+const Bug = require("../models/bug");
 
 /** 
  * READ
  */
 const allByProject = (request, response) => {
   const projectId = request.params.projectId;
-  UserStory.find({projectId})
-    .then(userStories => response.render("userStories", { projectId, userStories }))
+  Bug.find({projectId})
+    .then(bugs => response.render("bugs", { projectId, bugs }))
     .catch(error => console.log(error));
-}
+};
 
 /**
  * CREATE
  */
 const createGet = (request, response) => {
   const projectId = request.params.projectId;
-  response.render("userStories/create", {projectId});
+  response.render("bugs/create", {projectId});
 };
 
 const createPost = (request, response) => {
-  UserStory.create(request.body)
-    .then(() => response.redirect("/userStories/" + request.body.projectId))
+  Bug.create(request.body)
+    .then(() => response.redirect("/bugs/" + request.body.projectId))
     .then(error => console.log(error));
 };
 
@@ -29,20 +29,19 @@ const createPost = (request, response) => {
  */
 const updateGet = (request, response) => {
   const id = request.params.id;
-  UserStory.findById(id)
-    .then(userStory => response.render("userStories/update", {userStory: userStory}))
+  Bug.findById(id)
+    .then(bug => response.render("bugs/update", { bug: bug }))
     .catch(error => console.log(error));
 };
 
 const updatePost = (request, response) => {
-  const userStory = request.body;
-  UserStory.findByIdAndUpdate(userStory._id, {
-    title: userStory.title,
-    description: userStory.description,
-    acceptanceCriteria: userStory.acceptanceCriteria,
-    priority: userStory.priority,
-    projectId: userStory.projectId
-  }).then(() => response.redirect("/userStories/" + request.body.projectId))
+  const bug = request.body;
+  Bug.findByIdAndUpdate(bug._id, {
+    title: bug.title,
+    reproSteps: bug.reproSteps,
+    priority: bug.priority,
+    projectId: bug.projectId
+  }).then(() => response.redirect("/bugs/" + request.body.projectId))
     .catch(error => console.log(error));
 }
 
@@ -51,11 +50,11 @@ const updatePost = (request, response) => {
  */
 const deleteGet = (request, response) => {
   const id = request.params.id;
-  response.render("userStories/delete", { _id: id });
+  response.render("bugs/delete", { _id: id });
 };
 
 const deletePost = (request, response) => {
-  UserStory.findByIdAndDelete(request.body._id)
+  Bug.findByIdAndDelete(request.body._id)
     .then(() => response.redirect("/projects"))
     .catch(error => console.log(error));
 };

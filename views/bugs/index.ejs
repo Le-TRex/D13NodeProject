@@ -1,0 +1,21 @@
+<h1>Bugs</h1>
+
+<a href="/bugs/create/<%= projectId %>" class="button">Créer un rapport de bug</a>
+
+<div class="mainContainer">
+  <div>
+    <% bugs.forEach(bug => { %>
+
+      <div class="card">
+        <h3><%= bug.title %></a></h3>
+        <p> <%= bug.reproSteps %> </p>
+        <p> <%= bug.priority%> </p>
+        <div class="buttons">
+          <a href="/bugs/update/<%=bug._id%>"><button>Modifier</button></a>
+          <a href="/bugs/delete/<%=bug._id%>"><button>Supprimer</button></a>
+        </div>
+      </div>
+    <% }); %>
+  </div>
+
+</div>

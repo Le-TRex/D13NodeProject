@@ -5,13 +5,14 @@ const { urlencoded } = require("express");
 
 const projectRoutes = require("./routes/projectRoutes");
 const userStoryRoutes = require("./routes/userStoryRoutes");
+const bugRoutes = require("./routes/bugRoutes");
 
 const app = express();
 
 const dbUri = "mongodb://localhost:27017/projectManagement";
-mongoose.connect(dbUri, {useUnifiedTopology: true, useNewUrlParser: true}) //promise = un objet
-  .then(() => app.listen(4000)) //promise.then => quand la promise est résolue, faire xxx
-  .catch(error => console.log(error)); //catch attrape les erreurs et permet de les traiter
+mongoose.connect(dbUri, {useUnifiedTopology: true, useNewUrlParser: true})
+  .then(() => app.listen(5000))
+  .catch(error => console.log(error));
 
 app.use(express.static("public"));
 app.use(expressLayouts);
@@ -22,5 +23,6 @@ app.get("/", (request, response) => {
   response.redirect("projects");
 });
 
-app.use("/projects", projectRoutes); //"/projects" => alias pour le début de chaque route
+app.use("/projects", projectRoutes);
 app.use("/userStories", userStoryRoutes);
+app.use("/bugs", bugRoutes);

@@ -1,9 +1,9 @@
 <h1>Suppression</h1>
 
-<p>Êtes vous sûr de vouloir supprimer cette US ?</p>
 
-<form action="/userStories/delete" method="POST">
+<form action="/userStories/delete" method="POST" class="formCard">
+  <p>Êtes vous sûr de vouloir supprimer cette US ?</p>
   <input type="hidden" name="_id" value="<%=_id%>">
-  <a href="/userStories" class ="button"> Nope ! </a>
   <button>Yes ! Supprimer !</button>
+  <a href="/projects" class="button">Nop !</a>
 </form>
